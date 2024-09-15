@@ -5,4 +5,4 @@ This is an UART (Universal Asynchronous Receiver Transmitter)  TX (Transmitter f
 When creating a Vivado project, please select **xc7a100tfgg484-1** as an FPGA.
 
 MicroPhase A7-Lite FPGA board has a **CH340E** chip (USB to serial chip).
-You may need to install the CH304E device driver on your computer.
+Please install the CH304E device driver on your computer.
