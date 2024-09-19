@@ -38,16 +38,14 @@ endmodule
 
 /************************************************************************************/
 module m_main (
-    input  wire  w_clk     , // 50MHz clock signal
-    output wire  w_uart_tx , // UART tx 
-    output wire  w_led1    , // LED 1
-    output wire  w_led2      // LED 2
+    input  wire  w_clk       ,  // 50MHz clock signal
+    output wire  w_uart_tx   ,  // UART tx 
+    output wire  [1:0] w_led    // LED
 );
 
     reg [31:0] r_cnt = 0;
     always @(posedge w_clk) r_cnt <= r_cnt + 1;
-    assign w_led1 = r_cnt[23];
-    assign w_led2 = r_cnt[24];
+    assign w_led = r_cnt[24:23];
     
     reg r_we = 0;
     always @(posedge w_clk) r_we <= (r_cnt[23:0]==0);
